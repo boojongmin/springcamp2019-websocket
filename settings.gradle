@@ -1,0 +1,8 @@
+pluginManagement {
+	repositories {
+		gradlePluginPortal()
+	}
+}
+rootProject.name = 'springcamp2019-websocket-demo'
+
+include 'websocket-servlet-demo', 'websocket-reactive-demo'
