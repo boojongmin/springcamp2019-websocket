@@ -1,4 +1,4 @@
-var WebSocketClient = require('websocket').client;
+let WebSocketClient = require('websocket').client;
 
 function ws() {
   const client = new WebSocketClient();

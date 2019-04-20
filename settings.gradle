@@ -5,4 +5,4 @@ pluginManagement {
 }
 rootProject.name = 'springcamp2019-websocket-demo'
 
-include 'websocket-servlet-demo', 'websocket-reactive-demo'
+include 'socket-demo', 'websocket-servlet-demo', 'websocket-reactive-demo', 'websocket-stomp-demo'

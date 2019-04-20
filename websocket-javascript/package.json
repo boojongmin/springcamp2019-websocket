@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "sockjs-client": "^1.3.0",
+    "stompjs": "^2.3.3",
     "websocket": "^1.0.28"
   }
 }
