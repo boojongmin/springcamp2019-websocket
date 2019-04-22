@@ -10,14 +10,14 @@ client.on('connect', (connection) => {
     if (message.type === 'utf8') {
       console.log("Received: '" + message.utf8Data + "'");
     }
-  })
+  });
 
   connection.sendUTF('hello world!')
 
   connection.on('close', (message) => {
     console.log('session is closed.')
   })
-})
+});
 
 client.connect('http://localhost:8080/websocket')
 

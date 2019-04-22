@@ -26,6 +26,6 @@ function ws() {
   client.connect('http://localhost:8080/websocket')
 }
 
-for(let i=0; i< 1000; i++) {
+for(let i=0; i< 10000; i++) {
   ws();
 }

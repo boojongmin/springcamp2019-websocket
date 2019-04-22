@@ -16,11 +16,11 @@ stompClient.connect({}, function (/* frame */) {
 
   stompClient.subscribe('/topic/message', frame => {
     console.log(frame)
-  })
+  });
 
   stompClient.subscribe('/user/queue/error', frame => {
     console.log(frame)
-  })
+  });
 
   setTimeout(() => {
     // stompClient.send('/app/event', {}, JSON.stringify({a: 1}));
@@ -28,5 +28,5 @@ stompClient.connect({}, function (/* frame */) {
     // stompClient.send('/app/ksug.springcamp.hello', {}, {});
     // stompClient.send('/app/echo', {}, "hello echo!!");
       stompClient.send('/app/user', {}, {});
-  }, 1000)
+  }, 1000);
 });
