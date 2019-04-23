@@ -63,11 +63,11 @@ class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 @Controller
 class StompController {
+	private SimpMessagingTemplate template;
+
 	@MessageMapping("/event")
-	@SendTo("/topic/message")
-	public String stomp(Map map) {
-		System.out.println(">" + map);
-		return "hello world";
+	public void stomp(Map map) {
+		this.template.convertAndSend("/topic/message", "hello");
 	}
 }
 
@@ -103,9 +103,14 @@ class EchoController {
 		this.template = template;
 	}
 
-	@MessageMapping("echo")
-	public void echo(String echo) {
+	@MessageMapping("echo-every")
+	public void echoToEvery(String echo) {
 		this.template.convertAndSend("/topic/message", echo);
+	}
+
+	@MessageMapping("echo-one")
+	public void echoToOne(Principal principal, String echo) {
+		this.template.convertAndSendToUser(principal.getName(), "/queue/message", echo);
 	}
 }
 
